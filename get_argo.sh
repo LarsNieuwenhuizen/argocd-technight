@@ -8,8 +8,7 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 # Check input
 if [ -z ${1+x} ]
 then
-  echo "Please provide version"
-  exit 1
+  VERSION="v2.9.3"
 else
   VERSION=${1}
   URL="https://raw.githubusercontent.com/argoproj/argo-cd/${VERSION}/manifests/install.yaml"
