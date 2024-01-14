@@ -1,0 +1,35 @@
+{
+	"name": "Technight",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/rio/features/chezmoi:1": {},
+		"ghcr.io/rio/features/k9s:1": {}
+	},
+	"forwardPorts": [
+		"8080:8080"
+	],
+	"postCreateCommand": ".devcontainer/init.sh",
+	"customizations": {
+		"vscode": {
+				"settings": {
+						"terminal.integrated.defaultProfile.linux": "zsh",
+						"terminal.integrated.profiles.linux": {
+								"zsh": {
+										"path": "/usr/bin/zsh"
+								}
+						}
+				},
+				"extensions": [
+						"GitHub.copilot",
+						"GitHub.copilot-chat",
+						"GitHub.vscode-github-actions",
+						"EditorConfig.EditorConfig",
+						"foxundermoon.shell-format",
+						"timonwong.shellcheck"
+				]
+		}
+}
+}
