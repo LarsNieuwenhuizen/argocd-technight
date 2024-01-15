@@ -21,7 +21,7 @@ spec:
         targetRevision: '{{head_sha}}'
         kustomize:
           images:
-          - 'larsnieuwenhuizen/symfony-dummy:pr-{{number}}'
+          - 'larsnieuwenhuizen/technight-php:pr-{{number}}'
       destination:
         namespace: 'symfony-pr-{{number}}'
         server: https://kubernetes.default.svc
