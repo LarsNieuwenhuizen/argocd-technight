@@ -1,0 +1,32 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: symfony-applicationset
+  namespace: argocd
+spec:
+  goTemplate: true
+  generators:
+    - git:
+        repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
+        revision: main
+        directories:
+          - Deployment/*
+  template:
+    metadata:
+      name: symfony
+    spec:
+      destination:
+        namespace: symfony-{{.path.basenameNormalized}}
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        path: {{.path.path}}
+        repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
+        targetRevision: main
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
