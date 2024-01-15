@@ -1,0 +1,35 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: symfony-pr-applicationset
+spec:
+  goTemplate: true
+  generators:
+    - pullRequest:
+        github:
+          owner: LarsNieuwenhuizen
+          repository: symfony-dummy
+        requeueAfterSeconds: 1800
+  template:
+    metadata:
+      name: 'symfony-pr-{{number}}'
+    spec:
+      project: default
+      source:
+        path: 'Deployement/base'
+        repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
+        targetRevision: '{{head_sha}}'
+        kustomize:
+          images:
+            - name: larsnieuwenhuizen/symfony-dummy
+              newTag: 'pr-{{number}}'
+      destination:
+        namespace: 'symfony-pr-{{number}}'
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
