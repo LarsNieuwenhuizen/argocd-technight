@@ -4,7 +4,6 @@ kind: ApplicationSet
 metadata:
   name: symfony-pr-applicationset
 spec:
-  goTemplate: true
   generators:
     - pullRequest:
         github:
