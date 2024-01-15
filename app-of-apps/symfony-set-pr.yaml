@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        path: 'Deployement/base'
+        path: 'Deployment/base'
         repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
         targetRevision: '{{head_sha}}'
         kustomize:
