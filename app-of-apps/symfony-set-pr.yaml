@@ -10,7 +10,6 @@ spec:
         github:
           owner: LarsNieuwenhuizen
           repo: symfony-dummy
-          appSecretName: github-app-repo-creds
         requeueAfterSeconds: 1800
   template:
     metadata:
