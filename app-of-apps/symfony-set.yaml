@@ -22,7 +22,7 @@ spec:
         repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
         targetRevision: main
       destination:
-        namespace: 'symfony-{{.path.basenameNormalized}}'
+        namespace: 'symfony-{{.path.basename}}'
         server: https://kubernetes.default.svc
       syncPolicy:
         syncOptions:
