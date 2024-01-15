@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - symfony.yaml
 - symfony-set.yaml
+- symfony-set-pr.yaml
