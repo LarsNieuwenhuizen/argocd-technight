@@ -16,14 +16,14 @@ spec:
     metadata:
       name: symfony
     spec:
-      destination:
-        namespace: 'symfony-{{.path.basenameNormalized}}'
-        server: https://kubernetes.default.svc
       project: default
       source:
         path: '{{.path.path}}'
         repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
         targetRevision: main
+      destination:
+        namespace: 'symfony-{{.path.basenameNormalized}}'
+        server: https://kubernetes.default.svc
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
