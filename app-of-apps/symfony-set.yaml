@@ -10,7 +10,7 @@ spec:
         repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
         revision: main
         directories:
-          - Deployment/*
+        - path: Deployment/*
   template:
     metadata:
       name: symfony
