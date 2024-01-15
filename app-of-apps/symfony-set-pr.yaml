@@ -9,7 +9,7 @@ spec:
     - pullRequest:
         github:
           owner: LarsNieuwenhuizen
-          repository: symfony-dummy
+          repo: symfony-dummy
         requeueAfterSeconds: 1800
   template:
     metadata:
