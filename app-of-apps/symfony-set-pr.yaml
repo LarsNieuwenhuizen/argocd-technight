@@ -20,6 +20,14 @@ spec:
         repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
         targetRevision: '{{head_sha}}'
         kustomize:
+          patches:
+            - target:
+                kind: IngressRoute
+                name: technight-webserver
+              patch: |-
+                - op: replace
+                  path: /spec/routes/0/match
+                  value: Host(`{{number}}.technight.developers.nl`)
           images:
           - 'larsnieuwenhuizen/technight-php:pr-{{number}}'
       destination:
