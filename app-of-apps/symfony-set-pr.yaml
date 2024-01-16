@@ -27,7 +27,7 @@ spec:
               patch: |-
                 - op: replace
                   path: /spec/routes/0/match
-                  value: Host(`{{number}}.technight.developers.nl`)
+                  value: Host(`pr-{{number}}.technight.developers.nl`)
           images:
           - 'larsnieuwenhuizen/technight-php:pr-{{number}}'
       destination:
