@@ -23,7 +23,7 @@ spec:
           patches:
             - target:
                 kind: IngressRoute
-                name: technight-webserver
+                name: technight-web-route
               patch: |-
                 - op: replace
                   path: /spec/routes/0/match
