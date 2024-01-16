@@ -8,9 +8,11 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: traefik
-    repoURL: https://github.com/LarsNieuwenhuizen/traefik.git
-    targetRevision: main
+    chart: traefik
+    repoUrl: https://traefik.github.io/charts
+    targetRevision: v26.0.0
+    helm:
+      releaseName: traefik
   syncPolicy:
     automated:
       prune: true
