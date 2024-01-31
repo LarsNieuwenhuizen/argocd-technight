@@ -6,5 +6,5 @@ namespace: argocd
 
 resources:
 - namespace.yaml
-- ../../releases/v2.9.3
+- ../../releases/v2.9.2
 - ../../argocd-apps
