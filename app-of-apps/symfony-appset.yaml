@@ -7,7 +7,7 @@ spec:
   goTemplate: true
   generators:
     - git:
-        repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
+        repoURL: https://github.com/LarsNieuwenhuizen/argocd-technight.git
         revision: main
         files:
         - path: appsets/symfony/*.yaml
