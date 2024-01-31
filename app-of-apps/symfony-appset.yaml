@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        path: '{{.path}}'
+        path: '{{.appPath}}'
         repoURL: '{{.repoUrl}}'
         targetRevision: main
       destination:
