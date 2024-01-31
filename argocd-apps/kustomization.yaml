@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - argocd.yaml
 - app-of-apps.yaml
+- symfony-appset.yaml
