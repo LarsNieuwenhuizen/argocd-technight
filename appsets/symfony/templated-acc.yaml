@@ -1,0 +1,7 @@
+name: symfony-yamled
+project: default
+namespace: symfony-again
+server: https://kubernetes.default.svc
+path: Deployment/acc
+repoUrl: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
+targetRevision: main

@@ -1,0 +1,31 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: symfony-applicationset-file-based
+spec:
+  goTemplate: true
+  generators:
+    - git:
+        repoURL: https://github.com/LarsNieuwenhuizen/symfony-dummy.git
+        revision: main
+        files:
+        - path: appsets/symfony/*.yaml
+  template:
+    metadata:
+      name: 'symfony-{{.name}}'
+    spec:
+      project: default
+      source:
+        path: '{{.path}}'
+        repoURL: '{{.repoUrl}}'
+        targetRevision: main
+      destination:
+        namespace: '{{.namespace}}'
+        server: '{{.server}}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true

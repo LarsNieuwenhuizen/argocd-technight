@@ -4,4 +4,5 @@ resources:
 # - symfony.yaml
 # - symfony-set.yaml
 # - symfony-set-pr.yaml
+- ../appsets/symfony-appset.yaml
 - traefik.yaml
